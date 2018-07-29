@@ -35,11 +35,11 @@
 	</target>
 
 	<!-- Default, run this target -->
-	<target name="main" depends="clean, compile, jar" >
+	<target name="main" depends="clean, compile, jar,run" >
 		<echo> Build done </echo>
 	</target>
 	    <target name="run">
-        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
+        <java jar="${dist.dir}/AntJavaProject-20180729.jar" fork="true"/>
     </target>
 
 	
