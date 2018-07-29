@@ -16,7 +16,7 @@
 		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${build.dir}" />
 	</target>
 
-	<target name="dist" depends="compile" description="Creating the package and put into to ${dist.dir}">
+	<target name="jar" depends="compile" description="Creating the package and put into to ${dist.dir}">
 
 		<!-- Create the distribution directory -->
 		<mkdir dir="${dist.dir}" />
@@ -35,6 +35,12 @@
 	</target>
 
 	<!-- Default, run this target -->
-	<target name="main" depends="clean, compile, dist" />
+	<target name="main" depends="clean, compile, jar" >
+		<echo> Build done </echo>
+	</target>
+	    <target name="run">
+        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
+    </target>
 
+	
 </project>
