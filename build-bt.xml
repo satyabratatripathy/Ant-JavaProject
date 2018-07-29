@@ -39,7 +39,7 @@
 		<echo> Build done </echo>
 	</target>
 	    <target name="run">
-        <java jar="${dist.dir}/AntJavaProject-20180729.jar" fork="true"/>
+         <java jar="${dist.dir}/${project.name}-${DSTAMP}.jar" fork="true"/>
     </target>
 
 	
